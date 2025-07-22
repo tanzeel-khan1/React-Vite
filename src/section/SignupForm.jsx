@@ -11,44 +11,37 @@ const signupUser = async (form) => {
 
 function SignupForm({ onSignupSuccess }) {
   const navigate = useNavigate();
-
   const [form, setForm] = useState({
     username: "",
     email: "",
-
-    
     password: "",
     address: "",
   });
+  const [backendMsg, setBackendMsg] = useState("");
 
   const mutation = useMutation({
-
-
     mutationFn: signupUser,
-
     onSuccess: (data) => {
-
       localStorage.setItem("signup_userId", data.userId);
-      toast.success("Signup successful! Check your email for OTP.");
-      
+      setBackendMsg(data?.msg || "Signup successful! Check your email for OTP.");
+      toast.success(data?.msg || "Signup successful! Check your email for OTP.");
       onSignupSuccess();
-
       navigate("/verify");
     },
     onError: (error) => {
+      setBackendMsg(error?.response?.data?.msg || "Signup failed.");
       toast.error(error?.response?.data?.msg || "Signup failed.");
       console.error(error);
     },
   });
 
   const handleChange = (e) => {
-
-
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setBackendMsg("");
     mutation.mutate(form);
   };
 
@@ -105,10 +98,12 @@ function SignupForm({ onSignupSuccess }) {
             {mutation.isPending ? "Signing up..." : "Signup"}
           </button>
         </form>
-
-
+        {backendMsg && (
+          <div className={`mt-6 text-center text-sm font-semibold ${backendMsg.toLowerCase().includes('success') ? 'text-green-400' : 'text-red-400'}`}>
+            {backendMsg}
+          </div>
+        )}
       </div>
-
     </div>
   );
 }

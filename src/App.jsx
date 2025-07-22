@@ -13,7 +13,7 @@ const App = () => {
   const handleSignupClick = () => {
 
 
-             navigate('/signup');
+         navigate('/signup');
   };
 
   const handleSignupSuccess = () => {
