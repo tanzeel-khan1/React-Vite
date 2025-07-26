@@ -39,8 +39,7 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-blue-100">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white p-8 rounded shadow-md w-96"
-      >
+        className="bg-white p-8 rounded shadow-md w-96">
         <h2 className="text-2xl font-bold mb-6 text-center text-blue-700">Login</h2>
 
         <div className="mb-4">
@@ -48,11 +47,12 @@ const Login = () => {
           <input
             type="email"
             {...register("email", { required: "Email is required" })}
-            className="w-full border px-3 py-2 rounded"
-          />
+            className="w-full border px-3 py-2 rounded"/>
           {errors.email && (
             <p className="text-red-500 text-sm">{errors.email.message}</p>
           )}
+
+
         </div>
 
         <div className="mb-4">
@@ -60,18 +60,19 @@ const Login = () => {
           <input
             type="password"
             {...register("password", { required: "Password is required" })}
-            className="w-full border px-3 py-2 rounded"
-          />
+            className="w-full border px-3 py-2 rounded"/>
           {errors.password && (
             <p className="text-red-500 text-sm">{errors.password.message}</p>
+
           )}
+
+
         </div>
 
         <button
           type="submit"
           disabled={mutation.isPending}
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
-        >
+          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
           {mutation.isPending ? "Logging in..." : "Login"}
         </button>
       </form>
