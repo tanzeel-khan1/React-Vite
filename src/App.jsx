@@ -20,6 +20,7 @@ const App = () => {
   const { data: users = [], isLoading, isError } = useQuery({
     queryKey: ['users'],
     queryFn: fetchUsers,
+    
   });
 
   const mutation = useMutation({
@@ -31,7 +32,9 @@ const App = () => {
         )
       );
     },
+
   });
+
 
   const handleEdit = (id) => {
     const newName = prompt('Enter new name:');
@@ -50,8 +53,7 @@ const App = () => {
         <div key={user.id} style={{ marginBottom: '10px', padding: '10px', background: '#eee', borderRadius: '6px' }}>
           <p><strong>{user.name}</strong></p>
           <p>{user.email}</p>
-          <button
-            style={{
+          <button style={{
               background: 'blue',
               color: 'white',
               padding: '6px 12px',
@@ -59,8 +61,7 @@ const App = () => {
               border: 'none',
               borderRadius: '4px',
             }}
-            onClick={() => handleEdit(user.id)}
-          >
+            onClick={() => handleEdit(user.id)}>
             Edit
           </button>
         </div>
