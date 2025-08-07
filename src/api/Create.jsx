@@ -51,8 +51,7 @@ const App = () => {
           marginBottom: '20px',
           border: 'none',
           borderRadius: '6px',
-        }}
-      >
+        }}>
         Create User
       </button>
 

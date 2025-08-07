@@ -45,6 +45,7 @@ const App = () => {
     }
   };
 
+
   return (
     <div style={{ padding: '20px' }}>
       <h2>User List</h2>
@@ -61,8 +62,7 @@ const App = () => {
               border: 'none',
               borderRadius: '4px',
             }}
-            onClick={() => handleEdit(user.id)}
-          >
+            onClick={() => handleEdit(user.id)}>
             Edit
           </button>
         </div>
