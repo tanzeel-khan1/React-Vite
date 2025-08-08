@@ -2,36 +2,31 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import React from 'react';
 
-// Fetch users from API
 const fetchUsers = async () => {
   const res = await axios.get('https://jsonplaceholder.typicode.com/users');
   return res.data;
 };
 
-// Create a new user
 const createUser = async () => {
   const newUser = {
     name: 'New User',
     email: 'newuser@example.com',
   };
   const res = await axios.post('https://jsonplaceholder.typicode.com/users', newUser);
-  return res.data; // contains new user object
+  return res.data; 
 };
 
 const App = () => {
   const queryClient = useQueryClient();
 
-  // Fetch users
   const { data: users = [], isLoading, isError } = useQuery({
     queryKey: ['users'],
     queryFn: fetchUsers,
   });
 
-  // Create user mutation
   const mutation = useMutation({
     mutationFn: createUser,
     onSuccess: (newUser) => {
-      // Update UI without refetch
       queryClient.setQueryData(['users'], (oldData = []) => [...oldData, newUser]);
     },
   });

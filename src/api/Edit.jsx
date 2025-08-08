@@ -7,7 +7,6 @@ const fetchUsers = async () => {
   return res.data;
 };
 
-// 🔁 Edit user (PATCH request)
 const editUser = async ({ id, newName }) => {
   const res = await axios.patch(`https://jsonplaceholder.typicode.com/users/${id}`, {
     name: newName,
@@ -26,7 +25,6 @@ const App = () => {
   const mutation = useMutation({
     mutationFn: editUser,
     onSuccess: (updatedUser) => {
-      // Update the cache manually
       queryClient.setQueryData(['users'], (oldUsers) =>
         oldUsers.map((user) =>
           user.id === updatedUser.id ? { ...user, ...updatedUser } : user

@@ -4,7 +4,6 @@ const App = () => {
   return (
     <div>
       <Api/>
-      
     </div>
   )
 }

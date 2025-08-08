@@ -24,7 +24,6 @@ const App = () => {
   const mutation = useMutation({
     mutationFn: deleteUser,
     onSuccess: (deletedId) => {
-      // UI se turant hata do:
       queryClient.setQueryData(['users'], (oldData) =>
         oldData.filter((user) => user.id !== deletedId)
       );
