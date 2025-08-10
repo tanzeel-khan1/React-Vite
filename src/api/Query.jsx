@@ -34,14 +34,10 @@ const UsersList = () => {
         {data.map((user) => (
           <li
             key={user.id}
-            className="grid grid-cols-3 border p-3 rounded-md shadow-sm hover:bg-gray-100 transition"
-          >
+            className="grid grid-cols-3 border p-3 rounded-md shadow-sm hover:bg-gray-100 transition">
             <span>{user.name}</span>
             <span>{user.email}</span>
             <span>{user.address.city}</span>
-
- 
-
           </li>
 
         ))}

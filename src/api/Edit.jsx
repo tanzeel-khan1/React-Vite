@@ -51,18 +51,14 @@ const App = () => {
         <div key={user.id} style={{ marginBottom: '10px', padding: '10px', background: '#eee', borderRadius: '6px' }}>
           <p><strong>{user.name}</strong></p>
           <p>{user.email}</p>
-          <button
-            style={{
+          <button style={{
               background: 'blue',
               color: 'white',
               padding: '6px 12px',
               marginTop: '6px',
               border: 'none',
               borderRadius: '4px',
-            }}
-            onClick={() => handleEdit(user.id)}>
-            Edit
-          </button>
+            }} onClick={() => handleEdit(user.id)}> Edit </button>
         </div>
       ))}
     </div>

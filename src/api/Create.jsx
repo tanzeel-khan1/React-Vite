@@ -51,6 +51,7 @@ const App = () => {
       </button>
 
       {users.map((user) => (
+        
         <div key={user.id} style={{ marginBottom: '12px', background: '#eee', padding: '10px', borderRadius: '6px' }}>
           <p><strong>{user.name}</strong></p>
           <p style={{ fontSize: '14px' }}>{user.email}</p>

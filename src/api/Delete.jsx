@@ -60,8 +60,7 @@ const App = () => {
               borderRadius: '4px',
               border: 'none',
             }}
-            onClick={() => mutation.mutate(user.id)}
-          >
+            onClick={() => mutation.mutate(user.id)}>
             Delete
           </button>
         </div>
