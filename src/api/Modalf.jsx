@@ -1,23 +1,3 @@
-// import React, { useState } from "react";
-// import Modals from "./Modals";
-
-// function Modalf() {
-//   const [showModal, setShowModal] = useState(true);
-
-//   return (
-//     <div>
-//       {showModal && (
-//         <div style={{ background: "rgba(0,0,0,0.5)", padding: "20px" }}>
-//           <div style={{ background: "white", padding: "20px" }}>
-//             <Modals onCloseModal={() => setShowModal(false)} />
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
-
-// export default Modalf;
 import React, { useState } from "react";
 
 function Modal({ onCloseModal }) {

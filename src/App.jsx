@@ -1,18 +1,3 @@
-// import React from 'react'
-// import Modalf from "./api/Modalf"
-// import Modals from "./api/Modals"
-// import Combination from "./api/Combination"
-// const App = () => {
-//   return (
-//     <div>
-//       <Modalf/>
-//       <Modals/>
-//       <Combination/>
-//     </div>
-//   )
-// }
-
-// export default App
 import React, { useState } from "react";
 
 export default function BountyTaskForm() {
