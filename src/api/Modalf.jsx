@@ -7,7 +7,6 @@ function Modal({ onCloseModal }) {
     { id: 3, title: "Tab 3" },
   ]);
   const [activeTab, setActiveTab] = useState(1);
-
   const handleTabClick = (id) => {
     if (id === 3) {
       onCloseModal();
@@ -23,8 +22,7 @@ function Modal({ onCloseModal }) {
         background: "white",
         padding: "20px",
         width: "300px",
-      }}
-    >
+      }}>
       <div>
         {tabs.map((tab) => (
           <button
@@ -35,13 +33,11 @@ function Modal({ onCloseModal }) {
               padding: "8px 12px",
               backgroundColor: tab.id === activeTab ? "#ddd" : "#fff",
               cursor: "pointer",
-            }}
-          >
+            }}>
             {tab.title}
           </button>
         ))}
       </div>
-
       <div style={{ marginTop: "20px" }}>
         Content for {tabs.find((tab) => tab.id === activeTab)?.title}
       </div>

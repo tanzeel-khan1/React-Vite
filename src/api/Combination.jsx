@@ -4,7 +4,6 @@ import Modals from "../api/Modals";
 
 function Parent() {
   const [showModal, setShowModal] = useState(true);
-
   const closeModal = () => setShowModal(false);
 
   return (
