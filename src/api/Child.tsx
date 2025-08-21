@@ -16,7 +16,6 @@
 // export default Child;
 import React from "react";
 
-// Props ka type define karna zaroori hai
 interface ChildProps {
   name: string;
   setName: React.Dispatch<React.SetStateAction<string>>;

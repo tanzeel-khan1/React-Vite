@@ -81,7 +81,7 @@ const Projects = ({ active3 }) => {
             <Button 
             size="sm"
             className="bg-white/10 hover:bg-white/20 text-white border border-white/20 cursor-pointer backdrop-blur-sm rounded-xl px-[1.67rem] py-2 text-sm font-medium flex items-center justify-center transition-all duration-300 mb-2">
-              Create Project
+                 Create Project
             </Button>
           </DialogTrigger>
           <DialogContent 
@@ -91,7 +91,6 @@ const Projects = ({ active3 }) => {
              {active3 !== "tab3" && (
   <DialogTitle>Create New Project</DialogTitle>
 )}
-
             </DialogHeader>
             <ProjectRequest
               onSuccess={() => {
