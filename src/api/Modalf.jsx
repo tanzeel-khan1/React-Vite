@@ -34,8 +34,7 @@ function Modal({ onCloseModal }) {
               backgroundColor: tab.id === activeTab ? "#ddd" : "#fff",
               cursor: "pointer",
             }}>
-            {tab.title}
-          </button>
+            {tab.title} </button>
         ))}
       </div>
       <div style={{ marginTop: "20px" }}>
