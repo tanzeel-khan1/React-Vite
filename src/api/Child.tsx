@@ -14,7 +14,6 @@
 // }
 
 // export default Child;
-
 import React from "react";
 interface ChildProps {
   name: string;
