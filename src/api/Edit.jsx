@@ -6,7 +6,6 @@ const fetchUsers = async () => {
   const res = await axios.get('https://jsonplaceholder.typicode.com/users');
   return res.data;
 };
-
 const editUser = async ({ id, newName }) => {
   const res = await axios.patch(`https://jsonplaceholder.typicode.com/users/${id}`, {
     name: newName,

@@ -15,7 +15,6 @@ const ReusableTable = ({
 
   return (
     <div className={`bg-gray-900 text-white rounded-lg p-6 ${className}`}>
-      {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-semibold">{title}</h2>
 

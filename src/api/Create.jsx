@@ -6,7 +6,6 @@ const fetchUsers = async () => {
   const res = await axios.get('https://jsonplaceholder.typicode.com/users');
   return res.data;
 };
-
 const createUser = async () => {
   const newUser = {
     name: 'New User',
@@ -15,7 +14,6 @@ const createUser = async () => {
   const res = await axios.post('https://jsonplaceholder.typicode.com/users', newUser);
   return res.data; 
 };
-
 const App = () => {
   const queryClient = useQueryClient();
 

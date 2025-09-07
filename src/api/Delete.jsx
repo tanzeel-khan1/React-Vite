@@ -6,12 +6,10 @@ const fetchUsers = async () => {
   const response = await axios.get('https://jsonplaceholder.typicode.com/users');
   return response.data;
 };
-
 const deleteUser = async (id) => {
   await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`);
   return id;
 };
-
 const App = () => {
   const queryClient = useQueryClient();
 
