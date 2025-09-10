@@ -12,7 +12,6 @@ const ReusableTable = ({
 }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedPeriod, setSelectedPeriod] = useState(periods[0]);
-
   return (
     <div className={`bg-gray-900 text-white rounded-lg p-6 ${className}`}>
       <div className="flex items-center justify-between mb-6">

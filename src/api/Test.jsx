@@ -1,7 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { ResponsiveContainer, RadialBarChart, RadialBar } from "recharts";
 
-
 function BountyDetails({
   title = "Bounty Details",
   buttonText = "↗ Today",
