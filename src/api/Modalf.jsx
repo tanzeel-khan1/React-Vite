@@ -14,6 +14,7 @@ function Modal({ onCloseModal }) {
       setActiveTab(id);
     }
   };
+  
   return (
     <div
       style={{

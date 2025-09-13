@@ -25,6 +25,7 @@ export default function Sidebar() {
               : ""
           }`}
         >
+          
           {item.icon}
           <span>{item.name}</span>
         </button>
