@@ -14,7 +14,7 @@ function Modal({ onCloseModal }) {
       setActiveTab(id);
     }
   };
-  
+
   return (
     <div
       style={{
@@ -22,7 +22,8 @@ function Modal({ onCloseModal }) {
         background: "white",
         padding: "20px",
         width: "300px",
-      }}>
+      }}
+    >
       <div>
         {tabs.map((tab) => (
           <button
@@ -33,8 +34,10 @@ function Modal({ onCloseModal }) {
               padding: "8px 12px",
               backgroundColor: tab.id === activeTab ? "#ddd" : "#fff",
               cursor: "pointer",
-            }}>
-            {tab.title} </button>
+            }}
+          >
+            {tab.title}{" "}
+          </button>
         ))}
       </div>
       <div style={{ marginTop: "20px" }}>

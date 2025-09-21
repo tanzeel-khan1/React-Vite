@@ -38,7 +38,6 @@ export default function Chatbot() {
   function getBotReply(userMsg) {
     const s = userMsg.toLowerCase().trim();
 
-    // greetings
     if (/\bhi|hello|hey|salaam|assalam|assalamo?alekum\b/.test(s)) {
       return 'Hi! 👋 Ask me about coding, e.g., "what is React?" or "for loop in js"';
     }
@@ -54,7 +53,6 @@ export default function Chatbot() {
   console.log(i);
 }`;
     }
-
     if (s.includes('what is tailwind')) {
       return '🎨 Tailwind CSS ek utility-first CSS framework hai jo classes ki madad se fast styling allow karta hai.';
     }
