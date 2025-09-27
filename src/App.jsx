@@ -1,10 +1,3 @@
-/**
- * React + Tailwind Chatbot (Rule-based, Coding Focus)
- * ------------------------------------------------
- * Yeh version coding ke bare mein answers deta hai (offline, free).
- * Example queries: "what is React?", "for loop in js", "what is tailwind".
- */
-
 import React, { useEffect, useRef, useState } from 'react';
 
 const STORAGE_KEY = 'react-tailwind-chatbot-messages';
