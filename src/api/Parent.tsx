@@ -8,5 +8,4 @@ function Parent() {
     </div>
   );
 }
-
 export default Parent;

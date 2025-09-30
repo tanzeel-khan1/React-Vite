@@ -93,7 +93,6 @@ export default function Chatbot() {
       sendMessage(input);
     }
   }
-
   function clearChat() {
     if (!confirm('Clear chat?')) return;
     setMessages([]);
