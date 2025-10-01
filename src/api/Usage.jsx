@@ -13,7 +13,6 @@ const App = () => {
     { name: "Ali", email: "ali@example.com", role: "User" },
     { name: "Sara", email: "sara@example.com", role: "Editor" },
   ];
-
   return (
     <div className="p-6">
       <h1 className="text-xl font-bold mb-4">Users Table</h1>
