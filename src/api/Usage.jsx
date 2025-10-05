@@ -7,7 +7,6 @@ const App = () => {
     { header: "Email", accessor: "email" },
     { header: "Role", accessor: "role" },
   ];
-
   const data = [
     { name: "Babar", email: "babar@example.com", role: "Admin" },
     { name: "Ali", email: "ali@example.com", role: "User" },

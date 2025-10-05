@@ -10,6 +10,7 @@ const ReusableTable = ({
   className = "",
   emptyMessage = "No data available",
 }) => {
+  
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedPeriod, setSelectedPeriod] = useState(periods[0]);
   return (
