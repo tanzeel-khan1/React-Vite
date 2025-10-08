@@ -11,8 +11,6 @@ function BountyDetails({
   bottomStats = [],
   bgColor = "bg-red-700", 
 }) {
-  
-  
   return (
     <Card className={`${bgColor} border border-blue-400 p-4 sm:p-6`}>
       {/* Header */}

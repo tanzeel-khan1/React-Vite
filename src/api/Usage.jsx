@@ -14,7 +14,7 @@ const App = () => {
   ];
   return (
     <div className="p-6">
-      <h1 className="text-xl font-bold mb-4">Users Table</h1>
+      <h1 className="text-xl font-bold mb-4">Uses Table</h1>
       <Usage columns={columns} data={data} />
     </div>
   );
