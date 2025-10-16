@@ -6,8 +6,8 @@ export default function Spinner({ size = 28, thickness = 3 }) {
   const cx = size / 2;
   const r = (size - thickness) / 2;
   const circumference = 2 * Math.PI * r;
-  const dash = circumference * 0.25; // visible arc length
-  const gap = circumference; // remaining gap
+  const dash = circumference * 0.25;
+  const gap = circumference; 
 
   return (
     <svg
@@ -17,7 +17,6 @@ export default function Spinner({ size = 28, thickness = 3 }) {
       style={{ display: "inline-block", verticalAlign: "middle" }} // inline use
       aria-hidden="true"
     >
-      {/* faint circle background */}
       <circle
         cx={cx}
         cy={cx}
