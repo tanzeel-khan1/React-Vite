@@ -9,7 +9,10 @@ const fetchUsers = async () => {
 };
 
 const createUser = async (newUser) => {
-  const res = await axios.post("https://jsonplaceholder.typicode.com/users", newUser);
+  const res = await axios.post(
+    "https://jsonplaceholder.typicode.com/users",
+    newUser
+  );
   return res;
 };
 
@@ -18,7 +21,11 @@ const UsersList = () => {
   const [form, setForm] = useState({ name: "", email: "", city: "" });
   const [showForm, setShowForm] = useState(false);
 
-  const { data = [], isLoading, isError } = useQuery({
+  const {
+    data = [],
+    isLoading,
+    isError,
+  } = useQuery({
     queryKey: ["user"],
     queryFn: fetchUsers,
   });
@@ -48,8 +55,7 @@ const UsersList = () => {
   if (isError) return <p>Error loading users</p>;
 
   return (
-  <div className="p-6 max-w-7xl mx-auto">
-
+    <div className="p-6 max-w-7xl mx-auto">
       <h2 className="text-xl font-bold mb-4">User Management</h2>
 
       <button
@@ -95,7 +101,7 @@ const UsersList = () => {
               onClick={handleCreate}
               className="bg-green-600 text-white px-4 py-2 rounded"
             >
-               Create
+              Create
             </button>
           </motion.div>
         )}
