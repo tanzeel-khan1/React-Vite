@@ -1,31 +1,41 @@
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import axios from 'axios';
-import React from 'react';
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
+import React from "react";
 
 const fetchUsers = async () => {
-  const res = await axios.get('https://jsonplaceholder.typicode.com/users');
+  const res = await axios.get("https://jsonplaceholder.typicode.com/users");
   return res.data;
 };
 const createUser = async () => {
   const newUser = {
-    name: 'New User',
-    email: 'newuser@example.com',
+    name: "New User",
+    email: "newuser@example.com",
   };
-  const res = await axios.post('https://jsonplaceholder.typicode.com/users', newUser);
-  return res.data; 
+  const res = await axios.post(
+    "https://jsonplaceholder.typicode.com/users",
+    newUser
+  );
+  return res.data;
 };
 const App = () => {
   const queryClient = useQueryClient();
 
-  const { data: users = [], isLoading, isError } = useQuery({
-    queryKey: ['users'],
+  const {
+    data: users = [],
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["users"],
     queryFn: fetchUsers,
   });
 
   const mutation = useMutation({
     mutationFn: createUser,
     onSuccess: (newUser) => {
-      queryClient.setQueryData(['users'], (oldData = []) => [...oldData, newUser]);
+      queryClient.setQueryData(["users"], (oldData = []) => [
+        ...oldData,
+        newUser,
+      ]);
     },
   });
 
@@ -33,26 +43,36 @@ const App = () => {
   if (isError) return <p className="text-red-600">Something went wrong</p>;
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h2 style={{ fontSize: '24px', marginBottom: '16px' }}>User List</h2>
+    <div style={{ padding: "20px" }}>
+      <h2 style={{ fontSize: "24px", marginBottom: "16px" }}>User List</h2>
       <button
         onClick={() => mutation.mutate()}
         style={{
-          background: 'green',
-          color: 'white',
-          padding: '10px 20px',
-          marginBottom: '20px',
-          border: 'none',
-          borderRadius: '6px',
-        }}>
+          background: "green",
+          color: "white",
+          padding: "10px 20px",
+          marginBottom: "20px",
+          border: "none",
+          borderRadius: "6px",
+        }}
+      >
         Create User
       </button>
 
       {users.map((user) => (
-        
-        <div key={user.id} style={{ marginBottom: '12px', background: '#eee', padding: '10px', borderRadius: '6px' }}>
-          <p><strong>{user.name}</strong></p>
-          <p style={{ fontSize: '14px' }}>{user.email}</p>
+        <div
+          key={user.id}
+          style={{
+            marginBottom: "12px",
+            background: "#eee",
+            padding: "10px",
+            borderRadius: "6px",
+          }}
+        >
+          <p>
+            <strong>{user.name}</strong>
+          </p>
+          <p style={{ fontSize: "14px" }}>{user.email}</p>
         </div>
       ))}
     </div>
