@@ -9,6 +9,7 @@ const ProductList = () => {
     // 2 second delay
     const fetchData = async () => {
       try {
+        
         setTimeout(async () => {
           const res = await axios.get("http://localhost:7000/api/auth/product", {
             withCredentials: true,
