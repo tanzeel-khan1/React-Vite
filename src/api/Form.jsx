@@ -9,11 +9,13 @@ const ProductList = () => {
     // 2 second delay
     const fetchData = async () => {
       try {
-        
         setTimeout(async () => {
-          const res = await axios.get("http://localhost:7000/api/auth/product", {
-            withCredentials: true,
-          });
+          const res = await axios.get(
+            "http://localhost:7000/api/auth/product",
+            {
+              withCredentials: true,
+            }
+          );
           setProducts(res.data);
           setLoading(false);
         }, 2000); // 2 second delay
@@ -53,7 +55,9 @@ const ProductList = () => {
               className="w-full h-48 object-cover"
             />
             <div className="p-4">
-              <h3 className="text-xl font-semibold text-gray-800">{item.name}</h3>
+              <h3 className="text-xl font-semibold text-gray-800">
+                {item.name}
+              </h3>
               <p className="text-gray-600">Address: {item.Address}</p>
               <p className="text-gray-600">Phone: {item.phone}</p>
             </div>
@@ -65,4 +69,3 @@ const ProductList = () => {
 };
 
 export default ProductList;
-
